@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   fetch('/marvel').then(resp => resp.json()).then((data) => {
     var char= []; 
-    char.push(data[0]);
+    char.push(data[1]);
     console.log(char);
   });
       
