@@ -34,8 +34,6 @@ app.get('/marvel', (request, response) => {
   )
   .fail(console.error)
   .done();
-  
-  
 });
 
 
