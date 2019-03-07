@@ -26,7 +26,7 @@ var marvel = api.createClient({
 
 app.get('/marvel', (request, response) => {
  let data;
-  marvel.characters.findByName('spider-man')
+  marvel.characters.findByName('daredevil')
   .then(
   r => {
    response.send(r.data); 
