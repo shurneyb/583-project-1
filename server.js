@@ -26,7 +26,7 @@ var marvel = api.createClient({
 
 app.get('/marvel', (request, response) => {
  let data;
-  marvel.characters.findNameStartsWith('spider-man')
+  marvel.characters.findNameStartsWith('s')
   .then(
   r => {
    response.send(r.data); 
