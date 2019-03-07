@@ -16,6 +16,29 @@ app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 
+
+var api = require('marvel-api');
+ 
+var marvel = api.createClient({
+  publicKey: process.env.PUBLIC_KEY
+, privateKey: process.env.PRIVATE_KEY
+});
+
+app.get('/marvel', (request, response) => {
+ let data;
+  marvel.characters.findNameStartsWith('spider-man')
+  .then(
+  r => {
+   response.send(r.data); 
+  }
+  )
+  .fail(console.error)
+  .done();
+  
+  
+});
+
+
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
