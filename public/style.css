@@ -18,8 +18,29 @@ body {
 	margin-bottom: 400px;
 }
 
+.one{
+  height: 100%;
+	width: 100%;
+  background: black;
+}
+
+.two{
+  background: green;
+}
+
+.three{
+  background: red;
+}
+
+.four{
+  background: yellow;
+}
+
 #daredevil-svg {
   max-height: 80vh;
   float: left;
-  background: black;
+}
+
+h1{
+  font-family: 'Bangers', cursive;
 }
