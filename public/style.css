@@ -37,13 +37,10 @@ h1, h2{
   margin: 0;
   margin-bottom: 40px;
   letter-spacing: 4px;
-  font-family: 'Bangers';
+  font-family: 'Bangers', sans-serif;
   color: white;
   font-size: 8em;
 }
-
-a{
-  
 
 p{
   margin:0 20px;
@@ -64,3 +61,13 @@ p{
   justify-content: center;
 }
 
+a{
+  letter-spacing: 4px;
+  font-family: 'Bangers', sans-serif;
+  color: white;
+  font-size: 4em;
+}
+
+.link-wrapper{
+  margin-bottom: 1em;
+}
