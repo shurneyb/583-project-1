@@ -29,10 +29,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
   fetch('/marvel').then(resp => resp.json()).then((data) => {
     console.log(data);
     let d = data[0];
-    console.log(d.description);
-    var p = document.createElement('p');
-    p.innerHTML = d.name;
-    document.getElementById("description").appendChild(p);
+    
+    // add name of character
+    document.getElementById("name").innerHTML = d.name;
+    
+    // add description
+    document.getElementById("description").innerHTML = d.description;
   });
       
   
