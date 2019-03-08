@@ -27,8 +27,9 @@ body {
 }
 
 #daredevil-svg {
-  max-height: 80vh;
+  height: 90vh;
   float: left;
+  display: block;
 }
 
 h1{
@@ -40,3 +41,4 @@ h1{
 p{
   margin:0;
 }
+
