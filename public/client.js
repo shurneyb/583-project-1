@@ -30,13 +30,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log(data);
     let d = data[0];
     
-    // add name of character
+    // add picture of character
+    document.getElementById('pic').innerHTML = '<img id="picture" src="' + d.thumbnail.path + '.' + d.thumbnail.extension +'" alt="' + d.name + '">';
+
+    // add name
     document.getElementById('name').innerHTML = d.name;
-    console.log(d.thumbnail.path + '.' + d.thumbnail.extension);
-    
-    t = '<img src="' + d.thumbnail.path + '.' + d.thumbnail.extension +'" alt="' + d.name + '">'
-    document.getElementById('pic').innerHTML = t;
-    
+        
     // add description
     document.getElementById('description').innerHTML = d.description;
   });
