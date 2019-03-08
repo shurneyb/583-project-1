@@ -40,13 +40,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById('description').innerHTML = d.description;
     
     // link to "details"
-    document.getElementById('details').innerHTML = '<a href="' + d.urls[0].url + '" target="_blank" >Details</a>'
+    document.getElementById('details').innerHTML = '<img class="icon" src="https://cdn.glitch.com/6bbc355b-2452-4bc6-bd23-083a6f363155%2Fperson.svg?1552029122059"><a href="' + d.urls[0].url + '" target="_blank" >Details</a>'
     
     // link to wiki
-    document.getElementById('wiki').innerHTML = '<a href="' + d.urls[1].url + '" target="_blank" >Wiki</a>'
+    document.getElementById('wiki').innerHTML = '<img class="icon" src="https://cdn.glitch.com/6bbc355b-2452-4bc6-bd23-083a6f363155%2Fmagnify.svg?1552029121931"><a href="' + d.urls[1].url + '" target="_blank" >Wiki</a>'
     
     // link to comics
-    document.getElementById('comics').innerHTML = '<a href="' + d.urls[2].url + '" target="_blank" >Comics</a>'
+    document.getElementById('comics').innerHTML = '<img class="icon" src="https://cdn.glitch.com/6bbc355b-2452-4bc6-bd23-083a6f363155%2Fbook.svg?1552029122135"><a href="' + d.urls[2].url + '" target="_blank" >Comics</a>'
     
   });
 
