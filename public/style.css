@@ -33,7 +33,7 @@ body {
   max-width: 100%;
 }
 
-h1{
+h1, h2{
   margin: 0;
   margin-bottom: 40px;
   letter-spacing: 4px;
@@ -41,6 +41,9 @@ h1{
   color: white;
   font-size: 8em;
 }
+
+a{
+  
 
 p{
   margin:0 20px;

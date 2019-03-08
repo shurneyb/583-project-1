@@ -38,6 +38,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
         
     // add description
     document.getElementById('description').innerHTML = d.description;
+    
+    // link to "details"
+    document.getElementById('details').innerHTML = '<a href="' + d.urls[0].url + '" target="_blank" >Details</a>'
+    
+    // link to wiki
+    document.getElementById('wiki').innerHTML = '<a href="' + d.urls[1].url + '" target="_blank" >Wiki</a>'
+    
+    // link to comics
+    document.getElementById('comics').innerHTML = '<a href="' + d.urls[2].url + '" target="_blank" >Comics</a>'
+    
   });
 
       
