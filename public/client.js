@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   fetch('/marvel').then(resp => resp.json()).then((data) => {
     console.log(data);
+    
   });
       
   
