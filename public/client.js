@@ -31,10 +31,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let d = data[0];
     
     // add name of character
-    document.getElementById("name").innerHTML = d.name;
+    document.getElementById('name').innerHTML = d.name;
+    console.log(d.thumbnail.path + '.' + d.thumbnail.extension);
+    
+    t = '<img src="' + d.thumbnail.path + '.' + d.thumbnail.extension +'" alt="' + d.name + '">'
+    document.getElementById('pic').innerHTML = t;
     
     // add description
-    document.getElementById("description").innerHTML = d.description;
+    document.getElementById('description').innerHTML = d.description;
   });
       
   
