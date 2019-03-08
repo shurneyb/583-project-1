@@ -27,7 +27,7 @@ var marvel = api.createClient({
 
 app.get('/marvel', (request, response) => {
  let data;
-  marvel.characters.findByName('wolverine')
+  marvel.characters.findByName('daredevil')
   .then(
   r => {
    response.send(r.data); 
@@ -36,6 +36,22 @@ app.get('/marvel', (request, response) => {
   .fail(console.error)
   .done();
 });
+
+fetch('/marvel').then(resp => resp.json()).then((data) => {
+    let d = data[0];
+    name = d.name
+    
+    app.get('/marvel-2', (request, response) => {
+     let data;
+      marvel.characters.findByName('d.name')
+      .then(
+      r => {
+       response.send(r.data); 
+      })
+      .fail(console.error)
+      .done();
+    });
+  });
 
   //end my code
 

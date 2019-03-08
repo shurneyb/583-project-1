@@ -39,6 +39,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // add description
     document.getElementById('description').innerHTML = d.description;
   });
+  
+  fetch('/marvel-2').then(resp => resp.json()).then((data) => {
+    console.log(data);
+  });
       
   
 });
