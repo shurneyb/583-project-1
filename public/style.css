@@ -15,5 +15,11 @@ body {
 }
 
 .panel.four {
-	margin-bottom: 400px
+	margin-bottom: 400px;
+}
+
+#daredevil-svg {
+  max-height: 80vh;
+  float: left;
+  background: black;
 }
