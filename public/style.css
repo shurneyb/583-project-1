@@ -69,3 +69,12 @@ footer {
   padding-top: 25px;
   border-top: 1px solid lightgrey;
 }
+
+.panel {
+	height: 100%;
+	width: 100%;
+}
+
+.panel.four {
+	margin-bottom: 400px
+}
