@@ -7,12 +7,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   console.log('scroll magic is working!', ScrollMagic);
   var controller = new ScrollMagic.Controller();
   var scene = new ScrollMagic.Scene();
-
-  fetch('/marvel').then(resp => resp.json()).then((data) => {
-    console.log(data);
-  });
-      
-    var controller = new ScrollMagic.Controller({
+  
+  var controller = new ScrollMagic.Controller({
     globalSceneOptions: {
       triggerHook: 'onLeave'
     }
@@ -29,5 +25,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
       .setPin(slides[i])
       .addTo(controller);
   }
+
+  fetch('/marvel').then(resp => resp.json()).then((data) => {
+    console.log(data);
+  });
+      
   
 });

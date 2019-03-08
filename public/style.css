@@ -14,10 +14,6 @@ body {
 	width: 100%;
 }
 
-.panel.four {
-	margin-bottom: 400px;
-}
-
 .one{
   height: 100%;
 	width: 100%;
@@ -36,7 +32,7 @@ body {
   background: yellow;
 }
 
-#daredevil-svg {
+.daredevil-svg {
   max-height: 80vh;
   float: left;
 }
