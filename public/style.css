@@ -12,20 +12,20 @@ body {
   display: flex;
 }
 
-.one{
+#one{
+  background: maroon;
+}
+
+#two{
   background: black;
 }
 
-.two{
+#three{
   background: green;
 }
 
-.three{
+#four{
   background: pink;
-}
-
-.four{
-  background: yellow;
 }
 
 #picture {
