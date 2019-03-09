@@ -78,14 +78,19 @@ a{
   height:90%;
 }
 
-#svg-wrapper, svg{
-  height:300px;
-  width:700px;
+#svg-wrapper{
+  height:100vh;
+  width:100vw;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-
+#marvel-svg{
+  height: 100%;
+  width: 100%;
+}
 
 @media only screen and (max-width: 600px) {
   .panel {
