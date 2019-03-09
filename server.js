@@ -31,16 +31,15 @@ app.get('/marvel', (request, response) => {
  let data;
   marvel.characters.findByName('daredevil')
   .then(
-  r => {
-   response.send(r.data); 
-  }
+    r => {
+    response.send(r.data); 
+    }
   )
   .fail(console.error)
   .done();
 });
 
-
-  //end my code
+//end my code
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {

@@ -82,7 +82,11 @@ a{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10em auto;
+  margin: 20px auto;
+}
+
+#presents{
+  margin-bottom: 1em;
 }
 
 #marvel-svg{
@@ -104,8 +108,8 @@ a{
 }
 
 @keyframes wiggle {
-  from {padding-top: 0;}
-  to {padding-top: 1em;}
+  from {margin-top: 0;}
+  to {margin-top: 1em;}
 }
 
 @media only screen and (max-width: 600px) {
