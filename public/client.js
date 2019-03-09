@@ -12,17 +12,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var controller = new ScrollMagic.Controller();
   var scene = new ScrollMagic.Scene();
   
-  // make global variables to appear in chart
-  var series;
-  var comics;
-  var stories;
-  var events;
-  
   var controller = new ScrollMagic.Controller({
     globalSceneOptions: {
       triggerHook: 'onLeave'
     }
   });
+  
+  var chartVars = {series:"Fiat", comics:"500", stories:"white", events:''};
 
   // get all slides
   var slides = document.querySelectorAll("section.panel");
@@ -42,10 +38,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let d = data[0];
     
     // put values in chart variables
-    series = d.
-    comics
-    stories
-    events
+    series = d.series.available;
+    comics = d.comics.available;
+    stories = d.stories.available;
+    events = d.events.available;
     
     // add picture of character
     document.getElementById('pic').innerHTML = '<img id="picture" src="' + d.thumbnail.path + '.' + d.thumbnail.extension +'" alt="' + d.name + '">';
@@ -69,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   // instantiate chart
   var ctx = document.getElementById("myChart");
+  console.log(series);
   
   // start adapted from https://www.chartjs.org/docs/latest/getting-started/
   var myChart = new Chart(ctx, {
@@ -77,18 +74,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         labels: ["# of series", "# of comics", "# of stories", "# of events"],
         datasets: [{
           label: '',
-          data: [3, 19, 3, 5, 2, 3],
+          data: [series, comics, stories, events],
           backgroundColor: [
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
             'rgb(255, 206, 86)',
-            'rgb(75, 192, 192)',
-            'rgb(153, 102, 255)',
-            'rgb(255, 159, 64)'
+            'rgb(75, 192, 192)'
           ],
           borderColor: [
-            'black',
-            'black',
             'black',
             'black',
             'black',
