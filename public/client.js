@@ -2,6 +2,9 @@
 // client-side js
 // run by the browser each time your view template is loaded
 
+// use object to store variables for chart
+var chartVars = {};
+
 document.addEventListener("DOMContentLoaded", function(event) {
   
   // ensure js is running
@@ -17,8 +20,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       triggerHook: 'onLeave'
     }
   });
-  
-  var chartVars = {series:"Fiat", comics:"500", stories:"white", events:''};
 
   // get all slides
   var slides = document.querySelectorAll("section.panel");
@@ -37,11 +38,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log(data);
     let d = data[0];
     
+    
+    function getMyCallback(randomValue)
+{
+    return function(otherParam)
+    {
+        return randomValue * otherParam //or whatever it is you are doing.
+    }
+
+}
     // put values in chart variables
-    series = d.series.available;
-    comics = d.comics.available;
-    stories = d.stories.available;
-    events = d.events.available;
+    chartVars.series = d.series.available;
+    chartVars.comics = d.comics.available;
+    chartVars.stories = d.stories.available;
+    chartVars.events = d.events.available;
     
     // add picture of character
     document.getElementById('pic').innerHTML = '<img id="picture" src="' + d.thumbnail.path + '.' + d.thumbnail.extension +'" alt="' + d.name + '">';
@@ -65,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   // instantiate chart
   var ctx = document.getElementById("myChart");
-  console.log(series);
   
   // start adapted from https://www.chartjs.org/docs/latest/getting-started/
   var myChart = new Chart(ctx, {
@@ -74,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         labels: ["# of series", "# of comics", "# of stories", "# of events"],
         datasets: [{
           label: '',
-          data: [series, comics, stories, events],
+          data: [chartVars.series, chartVars.comics, chartVars.stories, chartVars.events],
           backgroundColor: [
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
