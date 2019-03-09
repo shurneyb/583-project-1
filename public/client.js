@@ -3,10 +3,20 @@
 // run by the browser each time your view template is loaded
 
 document.addEventListener("DOMContentLoaded", function(event) {
+  
+  // ensure js is running
   console.log("DOM fully loaded and parsed");
   console.log('scroll magic is working!', ScrollMagic);
+  
+  // instantiate scroll magic stuff
   var controller = new ScrollMagic.Controller();
   var scene = new ScrollMagic.Scene();
+  
+  // make global variables to appear in chart
+  var series;
+  var comics;
+  var stories;
+  var events;
   
   var controller = new ScrollMagic.Controller({
     globalSceneOptions: {
@@ -25,10 +35,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
       .setPin(slides[i])
       .addTo(controller);
   }
-
+  
+  // get marvel data from server
   fetch('/marvel').then(resp => resp.json()).then((data) => {
     console.log(data);
     let d = data[0];
+    
+    // put values in chart variables
+    series = d.
+    comics
+    stories
+    events
     
     // add picture of character
     document.getElementById('pic').innerHTML = '<img id="picture" src="' + d.thumbnail.path + '.' + d.thumbnail.extension +'" alt="' + d.name + '">';
@@ -50,15 +67,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
   });
 
+  // instantiate chart
   var ctx = document.getElementById("myChart");
   
+  // start adapted from https://www.chartjs.org/docs/latest/getting-started/
   var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["# of series", "# of comics", "# of stories", "# of events"],
         datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
+          label: '',
+          data: [3, 19, 3, 5, 2, 3],
           backgroundColor: [
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
@@ -75,17 +94,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
             'black',
             'black'
           ],
-           borderWidth: 1
+          borderWidth: 1
           }]
-        },
-        options: {
+          },
+          options: {
           scales: {
-         yAxes: [{
-                  ticks: {
-                      beginAtZero:true
-                  }
-              }]
+          yAxes: [{
+          ticks: {
+          beginAtZero:true
           }
+        }]
       }
+    }
   });
+  // end adapted from https://www.chartjs.org/docs/latest/getting-started/
+  
 });
