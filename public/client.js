@@ -9,9 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   console.log('scroll magic is working!', ScrollMagic);
   
   // instantiate scroll magic stuff
-  var controller = new ScrollMagic.Controller();
   var scene = new ScrollMagic.Scene();
-  
   var controller = new ScrollMagic.Controller({
     globalSceneOptions: {
       triggerHook: 'onLeave'
