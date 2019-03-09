@@ -1,4 +1,5 @@
 dependencies:
+  chart.js: 2.7.3
   express: 4.16.4
   marvel-api: 1.1.0
   scrollmagic: 2.0.6
@@ -120,6 +121,34 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-qBFcVeSnAv5NFQq9OHKCKn4J/Jg=
+  /chart.js/2.7.3:
+    dependencies:
+      chartjs-color: 2.3.0
+      moment: 2.24.0
+    dev: false
+    resolution:
+      integrity: sha512-3+7k/DbR92m6BsMUYP6M0dMsMVZpMnwkUyNSAbqolHKsbIzH2Q4LWVEHHYq7v0fmEV8whXE0DrjANulw9j2K5g==
+  /chartjs-color-string/0.6.0:
+    dependencies:
+      color-name: 1.1.4
+    dev: false
+    resolution:
+      integrity: sha512-TIB5OKn1hPJvO7JcteW4WY/63v6KwEdt6udfnDE9iCAZgy+V4SrbSxoIbTw/xkUIapjEI4ExGtD0+6D3KyFd7A==
+  /chartjs-color/2.3.0:
+    dependencies:
+      chartjs-color-string: 0.6.0
+      color-convert: 0.5.3
+    dev: false
+    resolution:
+      integrity: sha512-hEvVheqczsoHD+fZ+tfPUE+1+RbV6b+eksp2LwAhwRTVXEjCSEavvk+Hg3H6SZfGlPh/UfmWKGIvZbtobOEm3g==
+  /color-convert/0.5.3:
+    dev: false
+    resolution:
+      integrity: sha1-vbbGnOZg+t/+CwAHzER+G59ygr0=
+  /color-name/1.1.4:
+    dev: false
+    resolution:
+      integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
   /combined-stream/1.0.7:
     dependencies:
       delayed-stream: 1.0.0
@@ -538,6 +567,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-KI1+qOZu5DcW6wayYHSzR/tXKCDC5Om4s1z2QJjDULzLcmf3DvzS7oluY4HCTrc+9FiKmWUgeNLg7W3uIQvxtQ==
+  /moment/2.24.0:
+    dev: false
+    resolution:
+      integrity: sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
   /ms/2.0.0:
     dev: false
     resolution:
@@ -857,6 +890,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  chart.js: ^2.7.3
   express: ^4.16.4
   marvel-api: ^1.1.0
   scrollmagic: ^2.0.6

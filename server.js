@@ -18,6 +18,8 @@ app.get('/', function(request, response) {
 
 //my code
 
+var Chart = require('chart.js');
+
 var api = require('marvel-api');
  
 var marvel = api.createClient({
