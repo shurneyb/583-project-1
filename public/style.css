@@ -90,6 +90,22 @@ a{
   margin-top: 1em;
 }
 
+#scroll{
+  margin-bottom: 1em;
+}
+
+#arrow{
+  height: 100px;
+  width: 64px;
+  fill: white;
+  animation: wiggle 1s infinite alternate;
+}
+
+@keyframes wiggle {
+  from {margin-top: 0;}
+  to {margin-top: 1em;}
+}
+
 @media only screen and (max-width: 600px) {
   .panel {
     flex-direction: column;
