@@ -2,9 +2,6 @@
 // client-side js
 // run by the browser each time your view template is loaded
 
-// use object to store variables for chart
-var chartVars = {};
-
 document.addEventListener("DOMContentLoaded", function(event) {
   
   // ensure js is running
@@ -38,21 +35,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log(data);
     let d = data[0];
     
-    
-    function getMyCallback(randomValue)
-{
-    return function(otherParam)
-    {
-        return randomValue * otherParam //or whatever it is you are doing.
-    }
-
-}
-    // put values in chart variables
-    chartVars.series = d.series.available;
-    chartVars.comics = d.comics.available;
-    chartVars.stories = d.stories.available;
-    chartVars.events = d.events.available;
-    
     // add picture of character
     document.getElementById('pic').innerHTML = '<img id="picture" src="' + d.thumbnail.path + '.' + d.thumbnail.extension +'" alt="' + d.name + '">';
 
@@ -71,19 +53,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // link to comics
     document.getElementById('comics').innerHTML = '<img class="icon" src="https://cdn.glitch.com/6bbc355b-2452-4bc6-bd23-083a6f363155%2Fbook.svg?1552029122135"><a href="' + d.urls[2].url + '" target="_blank" >Comics</a>'
     
-  });
-
-  // instantiate chart
-  var ctx = document.getElementById("myChart");
-  
-  // start adapted from https://www.chartjs.org/docs/latest/getting-started/
-  var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
+    
+    // instantiate chart
+    var ctx = document.getElementById("myChart");
+    
+    // start adapted from https://www.chartjs.org/docs/latest/getting-started/
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
         labels: ["# of series", "# of comics", "# of stories", "# of events"],
         datasets: [{
           label: '',
-          data: [chartVars.series, chartVars.comics, chartVars.stories, chartVars.events],
+          data: [d.series.available, d.comics.available, d.stories.available, d.events.available],
           backgroundColor: [
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
@@ -105,10 +86,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
           ticks: {
           beginAtZero:true
           }
-        }]
+          }]
+        }
       }
-    }
+    });
+    // end adapted from https://www.chartjs.org/docs/latest/getting-started/
   });
-  // end adapted from https://www.chartjs.org/docs/latest/getting-started/
-  
 });
