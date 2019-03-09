@@ -79,3 +79,8 @@ a{
   max-height: 100px;
   margin-right: 20px;
 }
+
+#myChart{
+  width:90%;
+  height:90%;
+}
